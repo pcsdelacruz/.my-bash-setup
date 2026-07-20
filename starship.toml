@@ -1,0 +1,62 @@
+"$schema" = 'https://starship.rs/config-schema.json'
+
+format = """
+$directory\
+$git_branch\
+$git_status\
+$kubernetes\
+$aws\
+$docker_context\
+$terraform\
+$python\
+$cmd_duration
+$character"""
+
+add_newline = true
+
+[directory]
+format = "📂 [$path]($style) "
+style = "blue bold"
+truncation_length = 4
+truncate_to_repo = true
+
+[git_branch]
+format = "🌿 [$branch]($style) "
+style = "purple bold"
+
+[git_status]
+format = "([$all_status$ahead_behind]($style)) "
+style = "red bold"
+
+[kubernetes]
+disabled = false
+format = "☸️ [$context( \\($namespace\\))]($style) "
+style = "cyan bold"
+
+[aws]
+format = "☁️ [$profile]($style)[ 🌍 $region]($style) "
+style = "yellow bold"
+
+[docker_context]
+format = "🐳 [$context]($style) "
+style = "blue bold"
+only_with_files = true
+
+[terraform]
+format = "📦 [$workspace]($style) "
+style = "purple bold"
+
+[python]
+format = "🐍 [$virtualenv]($style) "
+style = "green bold"
+detect_files = []
+detect_extensions = []
+
+[cmd_duration]
+format = "⏱ [$duration]($style) "
+style = "yellow bold"
+min_time = 2000
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "❌ [❯](bold red)"
