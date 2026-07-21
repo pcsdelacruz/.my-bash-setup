@@ -15,7 +15,7 @@ $character"""
 add_newline = true
 
 [directory]
-format = "[󰉋 $path]($style) "
+format = "[󰉋 $path]($style)  "
 style = "blue"
 truncation_length = 4
 truncate_to_repo = false
@@ -25,35 +25,35 @@ format = "[ $branch]($style) "
 style = "purple"
 
 [git_status]
-format = "([$all_status$ahead_behind]($style)) "
-style = "red"
+format = "([$all_status$ahead_behind]($style))  "
+style = "red bold"
 
 [kubernetes]
 disabled = false
-format = "[󱃾 $context( \\($namespace\\))]($style) "
+format = "[󱃾 $context( \\($namespace\\))]($style)  "
 style = "cyan"
 
 [aws]
-format = "[ $profile]($style)[  $region]($style) "
+format = "[ $profile]($style)[  $region]($style)  "
 style = "yellow"
 
 [docker_context]
-format = "[ $context]($style) "
+format = "[ $context]($style)  "
 style = "blue"
 only_with_files = true
 
 [terraform]
-format = "[󱁢 $workspace]($style) "
+format = "[󱁢 $workspace]($style)  "
 style = "purple"
 
 [python]
-format = "[ $virtualenv]($style) "
+format = "[ $virtualenv]($style)  "
 style = "green "
 detect_files = []
 detect_extensions = []
 
 [cmd_duration]
-format = "[󰔟 $duration]($style) "
+format = "[󰔟 $duration]($style)  "
 style = "yellow "
 min_time = 2000
 
