@@ -15,48 +15,48 @@ $character"""
 add_newline = true
 
 [directory]
-format = "📂 [$path]($style) "
-style = "blue bold"
+format = "[󰉋 $path]($style) "
+style = "blue"
 truncation_length = 4
-truncate_to_repo = true
+truncate_to_repo = false
 
 [git_branch]
-format = "🌿 [$branch]($style) "
-style = "purple bold"
+format = "[ $branch]($style) "
+style = "purple"
 
 [git_status]
 format = "([$all_status$ahead_behind]($style)) "
-style = "red bold"
+style = "red"
 
 [kubernetes]
 disabled = false
-format = "☸️ [$context( \\($namespace\\))]($style) "
-style = "cyan bold"
+format = "[󱃾 $context( \\($namespace\\))]($style) "
+style = "cyan"
 
 [aws]
-format = "☁️ [$profile]($style)[ 🌍 $region]($style) "
-style = "yellow bold"
+format = "[ $profile]($style)[  $region]($style) "
+style = "yellow"
 
 [docker_context]
-format = "🐳 [$context]($style) "
-style = "blue bold"
+format = "[ $context]($style) "
+style = "blue"
 only_with_files = true
 
 [terraform]
-format = "📦 [$workspace]($style) "
-style = "purple bold"
+format = "[󱁢 $workspace]($style) "
+style = "purple"
 
 [python]
-format = "🐍 [$virtualenv]($style) "
-style = "green bold"
+format = "[ $virtualenv]($style) "
+style = "green "
 detect_files = []
 detect_extensions = []
 
 [cmd_duration]
-format = "⏱ [$duration]($style) "
-style = "yellow bold"
+format = "[󰔟 $duration]($style) "
+style = "yellow "
 min_time = 2000
 
 [character]
-success_symbol = "[❯](bold green)"
-error_symbol = "❌ [❯](bold red)"
+success_symbol = "[❯]( white)"
+error_symbol = "[❯]( red)"
