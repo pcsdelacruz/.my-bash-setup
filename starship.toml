@@ -16,7 +16,7 @@ add_newline = true
 
 [directory]
 format = "[󰉋 $path]($style)  "
-style = "blue"
+style = "#FFA500"
 truncation_length = 4
 truncate_to_repo = false
 
