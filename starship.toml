@@ -22,7 +22,7 @@ truncate_to_repo = false
 
 [git_branch]
 format = "[ $branch]($style) "
-style = "purple"
+style = "bright-white"
 
 [git_status]
 format = "([$all_status$ahead_behind]($style))  "
