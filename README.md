@@ -17,7 +17,8 @@ Then open a new shell (or `source ~/.bashrc`).
 - Installs the `starship` binary into `~/.local/bin` (official installer, non-interactive) if not already present.
 - Symlinks `starship.toml` → `~/.config/starship.toml`.
 - Symlinks `inputrc` → `~/.inputrc`.
-- Symlinks `bash_aliases` → `~/.bash_aliases` (PATH addition, `py3` alias, `starship init` hook). Stock Debian `.bashrc` already sources `~/.bash_aliases` if present, so `~/.bashrc` itself is left untouched. If a machine's `.bashrc` lacks that hook, the installer appends a small guarded block to add it.
+- Symlinks `bash_aliases` → `~/.bash_aliases` (PATH addition, `py3` alias, kubectl shortcut aliases, `starship init` hook). Stock Debian `.bashrc` already sources `~/.bash_aliases` if present, so `~/.bashrc` itself is left untouched. If a machine's `.bashrc` lacks that hook, the installer appends a small guarded block to add it.
+- Appends a guarded kubectl block to `~/.bashrc` (`KUBECONFIG` env var, `kubectl` completion, `alias k='kubectl'`) if not already present.
 - Never runs on a fresh machine blindly: if any target file already exists and isn't already the correct symlink, it's backed up first as `<file>.bak.<timestamp>` before being replaced.
 
 Safe to re-run any time (e.g. after `git pull`) — every step is a no-op once already applied.

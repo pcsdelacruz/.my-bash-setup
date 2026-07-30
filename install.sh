@@ -76,4 +76,27 @@ else
   } >> "$BASHRC"
 fi
 
+# 5. ensure ~/.bashrc has kubectl env/completion setup (matches current live setup)
+KUBE_MARKER_BEGIN="# >>> my-bash-setup kubectl >>>"
+KUBE_MARKER_END="# <<< my-bash-setup kubectl <<<"
+
+if [ -f "$BASHRC" ] && grep -qF "$KUBE_MARKER_BEGIN" "$BASHRC"; then
+  info "kubectl setup already present in ~/.bashrc; skipping"
+else
+  info "Adding kubectl env/completion setup to ~/.bashrc"
+  {
+    echo ""
+    echo "$KUBE_MARKER_BEGIN"
+    echo "export KUBECONFIG=~/.kube/config"
+    echo ""
+    echo "if command -v kubectl >/dev/null 2>&1; then"
+    echo "    source <(kubectl completion bash)"
+    echo "    complete -o default -F __start_kubectl k"
+    echo "fi"
+    echo ""
+    echo "alias k='kubectl'"
+    echo "$KUBE_MARKER_END"
+  } >> "$BASHRC"
+fi
+
 info "Done. Open a new shell or run 'source ~/.bashrc' to pick up changes."
