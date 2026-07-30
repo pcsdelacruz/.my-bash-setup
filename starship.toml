@@ -1,18 +1,23 @@
 "$schema" = 'https://starship.rs/config-schema.json'
 
 format = """
+$username\
 $directory\
 $git_branch\
 $git_status\
 $kubernetes\
 $aws\
-$docker_context\
 $terraform\
-$python\
-$cmd_duration
+$time
 $character"""
 
 add_newline = true
+
+[username]
+style_user = "green"
+style_root = "red"
+format = "[ $user]($style)  "
+show_always = true
 
 [directory]
 format = "[󰉋 $path]($style)  "
@@ -21,7 +26,7 @@ truncation_length = 4
 truncate_to_repo = false
 
 [git_branch]
-format = "[ $branch]($style) "
+format = "[ $branch]($style) "
 style = "bright-white"
 
 [git_status]
@@ -34,28 +39,12 @@ format = "[󱃾 $context( \\($namespace\\))]($style)  "
 style = "cyan"
 
 [aws]
-format = "[ $profile]($style)[  $region]($style)  "
+format = "[ $profile]($style)[  $region]($style)  "
 style = "yellow"
-
-[docker_context]
-format = "[ $context]($style)  "
-style = "blue"
-only_with_files = true
 
 [terraform]
 format = "[󱁢 $workspace]($style)  "
 style = "purple"
-
-[python]
-format = "[ $virtualenv]($style)  "
-style = "green "
-detect_files = []
-detect_extensions = []
-
-[cmd_duration]
-format = "[󰔟 $duration]($style)  "
-style = "yellow "
-min_time = 2000
 
 [character]
 success_symbol = "[❯]( white)"
