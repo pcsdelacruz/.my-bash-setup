@@ -11,7 +11,7 @@ $terraform\
 $time
 $character"""
 
-add_newline = true
+add_newline = false
 
 [username]
 style_user = "green"
